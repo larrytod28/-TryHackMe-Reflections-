@@ -30,7 +30,7 @@ Each reflection below walks through what I learned, the challenges I faced, and 
 
 | Room | Focus | Reflection |
 |------|--------|-------------|
-| **Basic Pentesting** | Web enumeration, SSH access, privilege escalation | [Read →](TryHackMe-Reflections/basic-pentesting-reflection.md) |
+| **Basic Pentesting** | Web enumeration, SSH access, privilege escalation | [Read →]((https://github.com/larrytod28/-TryHackMe-Reflections-/blob/main/.github/workflows/blank.yml)
 | **Blue** | Windows exploitation, Metasploit, post-exploitation | *Coming soon* |
 | **Overpass 2 - Hacked** | Log analysis, network forensics | *Coming soon* |
 | **RootMe** | Linux privilege escalation, basic CTF methodology | *Coming soon* |
@@ -39,7 +39,7 @@ Each reflection below walks through what I learned, the challenges I faced, and 
 
 ---
 
-## 🧰 Tools, Skills & Approach
+## 🧰 Tools, Skills & Approach 
 
 - **Security & Analysis:** Nmap, Hydra, Burp Suite, Wireshark, Metasploit, John the Ripper  
 - **Problem-Solving:** Investigative mindset, pattern recognition, user empathy  
