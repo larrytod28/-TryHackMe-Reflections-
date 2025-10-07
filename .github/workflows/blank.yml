@@ -1,0 +1,100 @@
+# 🧠 TryHackMe Reflection — Basic Pentesting
+
+**Date Completed:** 10/06/2025  
+**Difficulty:** Medium  
+**Focus Area:** Reconnaissance / Web Enumeration / Initial Access / Privilege Thinking
+
+---
+
+## 🧩 1. Overview
+I worked through the *Basic Pentesting* room to sharpen the fundamentals of reconnaissance and initial enumeration in a safe lab environment. My goal was to practice structured recon (network + web), learn to prioritize findings, and document the thought process I use when moving from detection to safe, ethical investigation.
+
+This room covers service discovery, web directory enumeration, basic credential checking, and thinking about escalation paths without diving into destructive exploitation.
+
+---
+
+## 🧰 2. Key Learnings
+- Recon is about prioritization: a single open service or a discovered admin panel can be far more valuable than dozens of low-signal ports.  
+- Effective enumeration tools (nmap, directory bruteforce, and banner analysis) let you form hypotheses quickly and safely.  
+- Web discovery often reveals the highest-leverage attack surface for low-effort gains (uploads, misconfigurations, credentials in config files).  
+- Recording every step and thinking in “why would an admin leave this here?” terms helps convert noise into meaningful leads.  
+- Practice labs reinforce that persistence and careful observation beat guesswork every time.
+
+---
+
+## 💬 3. Human-Level Reflection
+I approached this room like a support ticket: gather facts, triage by impact, then escalate the right way. At first I felt impatient to “get root” — but the room forced me to slow down and validate assumptions. That humility pays off in real ops and in support work: you avoid breaking things, you build trust, and you solve problems that actually matter to users.
+
+This is the mindset I want on my portfolio — technical curiosity fused with the discipline to document and communicate results clearly.
+
+---
+
+## 🧠 4. Tools & Commands Used
+| Tool | Purpose |
+|------|---------|
+| `nmap` | Service & port discovery, banner/version detection (`nmap -sV -p- <target>`) |
+| `gobuster` / `dirb` | Web directory and file enumeration (`gobuster dir -u http://<target> -w /path/to/wordlist`) |
+| `curl` | Quick HTTP probing and header inspection (`curl -I http://<target>`) |
+| Browser + DevTools | Inspecting web app behavior, source, and console output |
+| Notes / Markdown | Documenting steps, IPs, ports, and hypotheses for future reference |
+
+> Example commands (non-destructive, for lab use):  
+> `nmap -sV -p- 10.10.10.10`  
+> `gobuster dir -u http://10.10.10.10 -w /usr/share/wordlists/dirb/common.txt`  
+> `curl -I http://10.10.10.10/admin`
+
+*(Replace `10.10.10.10` with the lab IP. These commands are for controlled, ethical practice only.)*
+
+---
+
+## 🔍 5. Findings Summary
+- Open services discovered: HTTP (80), SSH (22), and a non-standard TCP service (high port). HTTP returned a small web application with a visible login page and a `/backup` directory index exposed during enumeration.  
+- `/backup` contained configuration-like artifacts that suggested default credentials might be present for a legacy admin panel (documented in my notes, not reproduced here).  
+- No immediate destructive exploits attempted — the focus was on mapping and safe proof-of-concept steps that demonstrate technique without causing harm.
+
+---
+
+## 🔐 6. Closing Insight
+This room reinforced a core principle I bring to support and security-adjacent roles: **careful observation + patient follow-through = reliable remediation.** In my portfolio, I’ll present these labs as short case studies that show not only what I did, but why I chose each step and how it maps back to reducing real user risk.
+
+> “I’ve become the kind of person who won’t stop until the problem is solved — but I do it in a way that’s safe, documented, and repeatable.”
+
+---
+
+**#TryHackMe #BasicPentesting #Recon #WebEnumeration #TechnicalPortfolio**
+ This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
