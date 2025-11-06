@@ -1,4 +1,4 @@
-# 🧠 Laurence Todisco — TryHackMe Portfolio
+# 🧠 Laurence Todisco — SOC Portfolio 
 
 **Email:** [larrytodisco@gmail.com](mailto:larrytodisco@gmail.com)  
 **LinkedIn:** [laurence-todisco](https://www.linkedin.com/in/laurence-todisco-82546b36b)  
